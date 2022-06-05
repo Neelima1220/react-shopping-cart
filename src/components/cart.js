@@ -12,7 +12,7 @@ const Cart = ({ cartData, handleRemove }) => {
       }}
     >
       {cartData.length &&
-        cartData.map((item) => {
+        cartData.map((item, index) => {
           return (
             <>
               <div
@@ -24,14 +24,17 @@ const Cart = ({ cartData, handleRemove }) => {
                   marginBottom: '1rem',
                 }}
               >
+                <span>+</span>
+                <p>{item.amount}</p>
+                <span>-</span>
                 <p> {item.title}</p>
                 <p>{item.price}</p>
                 <button
                   onClick={() => {
-                    handleAdditem(item);
+                    handleRemove(index);
                   }}
                 >
-                  Add to cart
+                  Remove Item
                 </button>
               </div>
             </>
