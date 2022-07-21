@@ -11,7 +11,7 @@ const Cart = ({ cartData, handleRemove }) => {
         margiTop: '1rem',
       }}
     >
-      {cartData.length &&
+      {cartData?.length &&
         cartData.map((item, index) => {
           return (
             <>
